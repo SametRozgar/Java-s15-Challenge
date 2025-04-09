@@ -1,12 +1,12 @@
 package library;
 
 
-public class Librarian {
-    private String name;
-    private String password;
+public class Librarian  extends Person{
 
+    private String password;
+    private String name;
     public Librarian(String name, String password) {
-        this.name = name;
+        super(name);
         this.password = password;
     }
 
@@ -33,5 +33,10 @@ public class Librarian {
     // Üye doğrulama
     public boolean verifyMember(MemberRecord member) {
         return member != null && member.getNoBooksIssued() >= 0;
+    }
+
+    @Override
+    public void whoYouAre() {
+        System.out.println("Im Librarian"+name);
     }
 }

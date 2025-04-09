@@ -8,12 +8,13 @@ public class Reader extends Person {
     private Set<Book> borrowedBooks = new HashSet<>();
     private static final int MAX_BOOK_LIMIT = 5;
 
+
     public Reader(String name) {
         super(name);
     }
 
     public boolean borrowBook(Book book) {
-        if (borrowedBooks.size() < MAX_BOOK_LIMIT) {
+        if (borrowedBooks.size() <= MAX_BOOK_LIMIT) {
             borrowedBooks.add(book);
             return true;
         }
